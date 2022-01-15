@@ -52,7 +52,7 @@ const color = {
   gray: '#F2F8F9',
   opaque: 'rgba(255, 255, 255, 0.94)',
   white: '#fff',
-  black: '#251500',
+  black: '#000000',
   specialGrey: '#AFC0D1',
   silver: '#DAE2EB',
   purple: '#8347FF',
@@ -64,10 +64,10 @@ const color = {
 
 // https://material.io/resources/color
 // color.primary = color.biscay
-color.primary = color.electricBlue
+color.primary = color.black
 color.primaryLight = color.astronaut
 color.primaryDark = color.downriver
-color.secondary = color.mintGreen
+color.secondary = color.white
 color.secondaryLight = color.aquamarine
 color.secondaryDark = color.shamrock
 color.error = color.red
