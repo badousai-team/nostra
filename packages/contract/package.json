@@ -1,0 +1,11 @@
+{
+  "name": "@nostra/contract",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nostra contract",
+  "author": "Badousai",
+  "exports": {
+    "./*": "./*.js",
+    "./abi/*": "./abi/*"
+  }
+}

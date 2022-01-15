@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "server/*" : ["packages/server/src/*"],
+      "site/*" : ["packages/site/src/*"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

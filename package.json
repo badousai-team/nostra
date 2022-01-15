@@ -1,0 +1,46 @@
+{
+  "name": "nostra",
+  "version": "2.3.0",
+  "license": "",
+  "private": true,
+  "description": "Nostra",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "lint": "eslint \"packages/**/*.{js,jsx}\"",
+    "lint:alone": "eslint --ext js,jsx,mdx",
+    "lintdiff": "FILES=$(for NAME in $(git diff --name-only --diff-filter=d --cached --relative); do if [[ $NAME =~ .*.js$ ]]; then echo ./$NAME; fi; done) && echo $FILES | xargs npm run lint:alone",
+    "bootstrap": "npm install && lerna bootstrap",
+    "dev": "lerna run dev --stream",
+    "test": "mocha 'packages/**/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:badousai-team/nostra"
+  },
+  "author": "Badousai",
+  "dependencies": {
+    "big.js": "^6.1.1",
+    "dotenv": "^10.0.0",
+    "web3": "^1.6.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "eslint": "^7.32.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-node": "^0.3.5",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^5.2.0",
+    "lerna": "^4.0.0",
+    "mocha": "^8.3.2",
+    "wsrun": "^5.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lintdiff"
+    }
+  }
+}
