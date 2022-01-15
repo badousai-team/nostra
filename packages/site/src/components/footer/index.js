@@ -14,9 +14,12 @@ const Footer = () => {
     <div className={classes.wrapper}>
       <Container>
         <div className={classes.containerWrapper}>
-          <span style={{ fontSize: '1rem' }}>
-            &copy; 2021 Nostra
-          </span>
+          <img
+            alt="Nostra"
+            title="Nostra"
+            src="/images/png/nostra-white.png"
+            className={classes.img}
+          />
           <div className={classes.footerLink}>
             <Link href="/" className={classes.link}>
               Terms & Conditions
