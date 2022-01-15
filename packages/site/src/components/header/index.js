@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { observer } from 'mobx-react'
 import {
   Avatar,
-  Typography,
   Container,
   AppBar,
   IconButton,
@@ -42,17 +41,9 @@ const LogoLink = styled(Link)(({ theme }) => ({
 }))
 
 const LogoImg = styled('img')(({ theme }) => ({
-  width: '56px',
-  height: '56px',
+  width: '109px',
+  height: '43px',
   [theme.breakpoints.down('sm')]: {
-    marginLeft: '-0.5rem',
-  },
-}))
-
-const LogoText = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '1rem',
-    maxWidth: '120px',
     marginLeft: '-0.5rem',
   },
 }))
@@ -100,11 +91,8 @@ const Header = () => {
             <LogoImg
               alt="Nostra"
               title="Nostra"
-              src="/images/png/harmony.png"
+              src="/images/png/nostra.png"
             />
-            <LogoText variant="h3">
-              Nostra
-            </LogoText>
           </LogoLink>
           <HeaderRight>
             {isMobile && accountStore.user ? (

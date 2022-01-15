@@ -1,6 +1,6 @@
 export default (theme) => ({
   wrapper: {
-    backgroundColor: theme.color.white,
+    backgroundColor: theme.color.primary,
   },
   containerWrapper: {
     height: 72,
@@ -14,9 +14,17 @@ export default (theme) => ({
       justifyContent: 'center',
     },
   },
+  img: {
+    width: '176px',
+    height: '43px',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '-0.5rem',
+    },
+  },
   link: {
     margin: '0 1rem',
     fontSize: '1rem',
+    color: theme.color.secondary,
   },
   footerLink: {
     display: 'flex',
@@ -29,5 +37,7 @@ export default (theme) => ({
       },
     },
   },
-  divider: {},
+  divider: {
+    backgroundColor: theme.color.secondary,
+  },
 })

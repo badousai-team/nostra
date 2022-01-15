@@ -9,12 +9,13 @@ const MetamaskConnect = (props) => {
 
   return (
     <Button
-      variant="text"
+      variant="outlined"
       color="primary"
       onClick={() => accountStore.setLoginDialog(true)}
+      style={{ borderRadius: 50 }}
       {...props}
     >
-      Connect
+      Connect Wallet
     </Button>
   )
 }
