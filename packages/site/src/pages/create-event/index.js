@@ -94,13 +94,6 @@ const CreateEvent = () => {
                   fullWidth
                   variant="outlined"
                 />
-                <RequiredText
-                  text="Bid"
-                />
-                <CustomTextField
-                  fullWidth
-                  variant="outlined"
-                />
               </div>
             </Grid>
             <Grid
@@ -133,16 +126,31 @@ const CreateEvent = () => {
                   fullWidth
                   variant="outlined"
                 />
-                <RequiredText
-                  text="Bid"
-                />
-                <CustomTextField
-                  fullWidth
-                  variant="outlined"
-                />
               </div>
             </Grid>
           </Grid>
+          <RequiredText
+            text="Bid"
+          />
+          <CustomTextField
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <img
+                    src="/images/png/arb.png"
+                    alt="arb icon"
+                    width={40}
+                  />
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position="end">
+                  ARB
+                </InputAdornment>
+              ),
+            }}
+          />
           <RequiredText
             text="Limit Event Time"
           />
