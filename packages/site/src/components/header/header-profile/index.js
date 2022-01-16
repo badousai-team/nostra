@@ -1,5 +1,7 @@
 import React, { useState, lazy, Suspense } from 'react'
 import { observer } from 'mobx-react'
+import { useHistory } from 'react-router-dom'
+
 import {
   Typography,
   CircularProgress,
@@ -10,16 +12,14 @@ import {
   ListItemText,
   Avatar,
   ButtonBase,
-  Button,
   useMediaQuery,
 } from '@mui/material'
 
-import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import AddIcon from '@mui/icons-material/Add'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { makeStyles } from '@mui/styles'
 
-import Link from 'site/components/link'
 import { DISABLE_LOGIN } from 'site/config'
 import { useStores } from 'site/hooks'
 
@@ -38,6 +38,7 @@ const HeaderProfile = ({ onCloseDrawer }) => {
   const open = Boolean(anchorEl)
   const classes = useStyle()
   const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'))
+  const route = useHistory()
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
@@ -60,6 +61,10 @@ const HeaderProfile = ({ onCloseDrawer }) => {
 
   if (accountStore.loading) {
     return <CircularProgress color="secondary" />
+  }
+
+  const routing = (link) => {
+    route.push(link)
   }
 
   if (accountStore.user && !isMobile) {
@@ -99,17 +104,14 @@ const HeaderProfile = ({ onCloseDrawer }) => {
               'aria-labelledby': 'account-profile-button',
             }}
           >
-            <div style={{ textAlign: 'center', padding: '0 1rem', fontWeight: 'bold' }}>
-              {accountStore.accountShortDisplay}
-            </div>
-            <MenuItem onClick={handleProfileClick}>
+            <MenuItem onClick={() => routing('/create-event')}>
               <ListItemIcon>
                 <Avatar className={classes.iconMenuContainer}>
-                  <AccountBoxIcon fontSize="small" className={classes.iconMenu} />
+                  <AddIcon fontSize="small" className={classes.iconMenu} />
                 </Avatar>
               </ListItemIcon>
               <ListItemText className={classes.iconText}>
-                Profile
+                Create Event
               </ListItemText>
             </MenuItem>
             <MenuItem onClick={handleLogout}>
@@ -135,18 +137,13 @@ const HeaderProfile = ({ onCloseDrawer }) => {
           <MenuItem onClick={handleProfileClick}>
             <ListItemIcon>
               <Avatar className={classes.iconMenuContainer}>
-                <AccountBoxIcon fontSize="small" className={classes.iconMenu} />
+                <AddIcon fontSize="small" className={classes.iconMenu} />
               </Avatar>
             </ListItemIcon>
             <ListItemText className={classes.iconText}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <Typography style={{ fontWeight: 'bold' }}>
-                  {accountStore.user.username}
-                </Typography>
-                <Typography style={{ fontWeight: 'bold' }}>
-                  {accountStore.accountShortDisplay}
-                </Typography>
-              </div>
+              <Typography style={{ fontWeight: 'bold' }}>
+                Create Event
+              </Typography>
             </ListItemText>
           </MenuItem>
           <MenuItem onClick={handleLogout}>

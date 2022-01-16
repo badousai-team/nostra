@@ -7,6 +7,7 @@ import {
   IconButton,
   useMediaQuery,
   Stack,
+  Typography,
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
@@ -62,11 +63,17 @@ const ProfilePhoto = observer(() => {
   const { accountStore } = useStores()
 
   return (
-    <Avatar
-      src={accountStore.user?.profileUrl || '/images/png/user-login.png'}
-      alt={accountStore.user?.username}
-      sx={{ width: '32px', height: '32px' }}
-    />
+    <>
+      <Typography>
+        {console.log(accountStore.accountShortDisplay)}
+        {accountStore.accountShortDisplay}
+      </Typography>
+      <Avatar
+        src={accountStore.user?.profileUrl || '/images/png/user-login.png'}
+        alt={accountStore.user?.username}
+        sx={{ width: '32px', height: '32px' }}
+      />
+    </>
   )
 })
 
