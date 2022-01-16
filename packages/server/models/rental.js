@@ -2,13 +2,13 @@ const { Model, DataTypes } = require('sequelize')
 
 const { db } = require('./db')
 
-class Event extends Model {
+class Rental extends Model {
   display() {
     return this.get({ plain: true })
   }
 }
 
-Event.init({
+Rental.init({
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -19,12 +19,20 @@ Event.init({
     type: DataTypes.UUID,
     allowNull: false,
   },
-  title: {
-    type: DataTypes.TEXT,
+  eventId: {
+    type: DataTypes.UUID,
     allowNull: false,
-    defaultValue: '',
+  },
+  cardId: {
+    type: DataTypes.UUID,
+    allowNull: false,
   },
   rentPrice: {
+    type: DataTypes.DECIMAL,
+    defaultValue: 0,
+    allowNull: false,
+  },
+  deposit: {
     type: DataTypes.DECIMAL,
     defaultValue: 0,
     allowNull: false,
@@ -56,7 +64,7 @@ Event.init({
   },
 }, {
   sequelize: db,
-  tableName: 'Event',
+  tableName: 'Rental',
 })
 
-module.exports = Event
+module.exports = Rental
