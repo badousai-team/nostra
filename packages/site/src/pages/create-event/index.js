@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 import {
   Button,
   Grid,
+  InputAdornment,
   Stack,
   TextField,
   Typography,
@@ -145,10 +146,59 @@ const CreateEvent = () => {
           <RequiredText
             text="Limit Event Time"
           />
-          <CustomTextField
-            fullWidth
-            variant="outlined"
-          />
+          <Grid
+            container
+            spacing={2}
+          >
+            <Grid
+              item
+              md={4}
+            >
+              <CustomTextField
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      Days
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
+            <Grid
+              item
+              md={4}
+            >
+              <CustomTextField
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      Hours
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
+            <Grid
+              item
+              md={4}
+            >
+              <CustomTextField
+                fullWidth
+                variant="outlined"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      Mins
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
+          </Grid>
           <Typography variant="h3">
             Note
           </Typography>
