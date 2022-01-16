@@ -65,7 +65,6 @@ const ProfilePhoto = observer(() => {
   return (
     <>
       <Typography>
-        {console.log(accountStore.accountShortDisplay)}
         {accountStore.accountShortDisplay}
       </Typography>
       <Avatar
