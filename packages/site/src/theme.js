@@ -57,6 +57,7 @@ const color = {
   silver: '#DAE2EB',
   purple: '#8347FF',
   yellow: '#FFCB00',
+  darkGrey: '#D7D7D7',
 
   metamask: '#EB8525',
 
