@@ -47,9 +47,9 @@ const color = {
   eastBay: '#48537E',
 
   red: '#E4627B',
-  green: '#4CD964',
+  green: '#00F453',
   transparent: 'rgba(0, 0, 0, 0)',
-  gray: '#F2F8F9',
+  gray: '#C5C5C5',
   opaque: 'rgba(255, 255, 255, 0.94)',
   white: '#fff',
   black: '#000000',
@@ -61,7 +61,7 @@ const color = {
 
   metamask: '#EB8525',
 
-  background: '#FAFAFA',
+  background: '#F5F5F5',
 }
 
 // https://material.io/resources/color
@@ -73,7 +73,7 @@ color.secondary = color.white
 color.secondaryLight = color.aquamarine
 color.secondaryDark = color.shamrock
 color.error = color.red
-color.textPrimary = color.biscay
+color.textPrimary = color.black
 color.textSecondary = color.eastBay
 
 // Material UI default color palettes
