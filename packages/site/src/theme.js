@@ -56,6 +56,7 @@ const color = {
   specialGrey: '#AFC0D1',
   silver: '#DAE2EB',
   purple: '#8347FF',
+  orange: '#FB710E',
   yellow: '#FFCB00',
   darkGrey: '#D7D7D7',
 
