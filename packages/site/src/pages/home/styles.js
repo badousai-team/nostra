@@ -6,9 +6,14 @@ export default function styles({ breakpoints }) {
       },
     },
     container: {
+      marginBottom: '1rem',
       [breakpoints.down('sm')]: {
         padding: '0 1rem !important',
       },
+    },
+    title: {
+      textAlign: 'center',
+      margin: '1.5rem 0',
     },
   }
 }
